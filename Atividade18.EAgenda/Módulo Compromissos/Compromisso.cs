@@ -30,26 +30,26 @@ namespace Atividade18.EAgenda.Módulo_Compromissos
                this.localCompromisso = localCompromisso;
                this.id = id;
                if (localCompromisso == LocalCompromissoEnum.Presencial)
-                    this.localPresencial = tipoLocal;
+                    localPresencial = tipoLocal;
 
                else
-                    this.localOnline = tipoLocal;            
+                    localOnline = tipoLocal;            
           }
 
           public override void AtualizarRegistros(Compromisso compromissoAtualizado)
           {
-               this.assunto = compromissoAtualizado.assunto;
-               this.data = compromissoAtualizado.data;
-               this.horarioInicio = compromissoAtualizado.horarioInicio;
-               this.horarioFinal = compromissoAtualizado.horarioFinal;
-               this.contato = compromissoAtualizado.contato;
-               this.localCompromisso = compromissoAtualizado.localCompromisso;
+               assunto = compromissoAtualizado.assunto;
+               data = compromissoAtualizado.data;
+               horarioInicio = compromissoAtualizado.horarioInicio;
+               horarioFinal = compromissoAtualizado.horarioFinal;
+               contato = compromissoAtualizado.contato;
+               localCompromisso = compromissoAtualizado.localCompromisso;
 
                if (compromissoAtualizado.localCompromisso == LocalCompromissoEnum.Presencial)
-                    this.localPresencial =  compromissoAtualizado.localPresencial;
+                    localPresencial =  compromissoAtualizado.localPresencial;
 
                else
-                    this.localOnline = compromissoAtualizado.localOnline;
+                    localOnline = compromissoAtualizado.localOnline;
           }
 
           public override string[] ValidarErros()
@@ -71,11 +71,6 @@ namespace Atividade18.EAgenda.Módulo_Compromissos
                return erros.ToArray();
           }
 
-          public override string ToString()
-          {
-               return $"Id: {id} | Assunto: {assunto} | Data: {data}";
-          }
-
           public override bool Equals(object? obj)
           {
                return obj is Compromisso compromisso &&
@@ -84,7 +79,7 @@ namespace Atividade18.EAgenda.Módulo_Compromissos
                       data == compromisso.data &&
                       horarioInicio.Equals(compromisso.horarioInicio) &&
                       horarioFinal.Equals(compromisso.horarioFinal) &&
-                      EqualityComparer<Contato>.Default.Equals(contato, compromisso.contato) &&
+                      EqualityComparer<Contato?>.Default.Equals(contato, compromisso.contato) &&
                       localPresencial == compromisso.localPresencial &&
                       localOnline == compromisso.localOnline &&
                       localCompromisso == compromisso.localCompromisso;

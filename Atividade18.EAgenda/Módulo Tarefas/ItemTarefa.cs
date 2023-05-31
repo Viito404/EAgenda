@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Atividade18.EAgenda.Módulo_Tarefas
+﻿namespace Atividade18.EAgenda.Módulo_Tarefas
 {
      public class ItemTarefa 
      {
@@ -36,6 +30,18 @@ namespace Atividade18.EAgenda.Módulo_Tarefas
           public void Desmarcar()
           {
                concluido = false;
+          }
+
+          public string[] ValidarErros()
+          {
+               List<string> erros = new List<string>();
+
+               if (string.IsNullOrEmpty(titulo))
+               {
+                    erros.Add("Entre com a atividade da tarefa!");
+               }
+
+               return erros.ToArray();
           }
      }
 }

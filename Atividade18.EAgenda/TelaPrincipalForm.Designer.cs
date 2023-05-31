@@ -37,6 +37,9 @@
                contatosMenuItem = new ToolStripMenuItem();
                compromissosMenuItem = new ToolStripMenuItem();
                tarefasMenuItem = new ToolStripMenuItem();
+               despesasToolStrip = new ToolStripMenuItem();
+               categoriasMenuItem = new ToolStripMenuItem();
+               despesasMenuItem = new ToolStripMenuItem();
                toolStrip1 = new ToolStrip();
                btnInserir = new ToolStripButton();
                btnEditar = new ToolStripButton();
@@ -58,6 +61,7 @@
                // 
                // ssRodape
                // 
+               ssRodape.BackColor = SystemColors.Control;
                ssRodape.Items.AddRange(new ToolStripItem[] { tssStatus });
                ssRodape.Location = new Point(0, 439);
                ssRodape.Name = "ssRodape";
@@ -82,7 +86,7 @@
                // 
                // cadastrosMenuItem
                // 
-               cadastrosMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contatosMenuItem, compromissosMenuItem, tarefasMenuItem });
+               cadastrosMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contatosMenuItem, compromissosMenuItem, tarefasMenuItem, despesasToolStrip });
                cadastrosMenuItem.Name = "cadastrosMenuItem";
                cadastrosMenuItem.Size = new Size(71, 20);
                cadastrosMenuItem.Text = "Cadastros";
@@ -90,23 +94,44 @@
                // contatosMenuItem
                // 
                contatosMenuItem.Name = "contatosMenuItem";
-               contatosMenuItem.Size = new Size(154, 22);
+               contatosMenuItem.Size = new Size(180, 22);
                contatosMenuItem.Text = "Contatos";
                contatosMenuItem.Click += contatosMenuItem_Click;
                // 
                // compromissosMenuItem
                // 
                compromissosMenuItem.Name = "compromissosMenuItem";
-               compromissosMenuItem.Size = new Size(154, 22);
+               compromissosMenuItem.Size = new Size(180, 22);
                compromissosMenuItem.Text = "Compromissos";
                compromissosMenuItem.Click += compromissosMenuItem_Click;
                // 
                // tarefasMenuItem
                // 
                tarefasMenuItem.Name = "tarefasMenuItem";
-               tarefasMenuItem.Size = new Size(154, 22);
+               tarefasMenuItem.Size = new Size(180, 22);
                tarefasMenuItem.Text = "Tarefas";
                tarefasMenuItem.Click += tarefasMenuItem_Click;
+               // 
+               // despesasToolStrip
+               // 
+               despesasToolStrip.DropDownItems.AddRange(new ToolStripItem[] { categoriasMenuItem, despesasMenuItem });
+               despesasToolStrip.Name = "despesasToolStrip";
+               despesasToolStrip.Size = new Size(180, 22);
+               despesasToolStrip.Text = "Despesas";
+               // 
+               // categoriasMenuItem
+               // 
+               categoriasMenuItem.Name = "categoriasMenuItem";
+               categoriasMenuItem.Size = new Size(180, 22);
+               categoriasMenuItem.Text = "Categorias";
+               categoriasMenuItem.Click += categoriasMenuItem_Click;
+               // 
+               // despesasMenuItem
+               // 
+               despesasMenuItem.Name = "despesasMenuItem";
+               despesasMenuItem.Size = new Size(180, 22);
+               despesasMenuItem.Text = "Despesas";
+               despesasMenuItem.Click += despesasMenuItem_Click;
                // 
                // toolStrip1
                // 
@@ -229,7 +254,7 @@
                // 
                // panelRegistros
                // 
-               panelRegistros.BackColor = SystemColors.ActiveBorder;
+               panelRegistros.BackColor = SystemColors.Control;
                panelRegistros.Dock = DockStyle.Fill;
                panelRegistros.Location = new Point(0, 69);
                panelRegistros.Name = "panelRegistros";
@@ -244,6 +269,7 @@
                // 
                AutoScaleDimensions = new SizeF(7F, 15F);
                AutoScaleMode = AutoScaleMode.Font;
+               BackColor = SystemColors.Control;
                ClientSize = new Size(709, 461);
                Controls.Add(panelRegistros);
                Controls.Add(toolStrip1);
@@ -287,5 +313,8 @@
           private ToolStripSeparator toolStripSeparator3;
           private ToolStripButton btnChecar;
           private ToolStripSeparator toolStripSeparator4;
+          private ToolStripMenuItem despesasToolStrip;
+          private ToolStripMenuItem categoriasMenuItem;
+          private ToolStripMenuItem despesasMenuItem;
      }
 }

@@ -1,7 +1,4 @@
-﻿using Atividade18.EAgenda.Módulo_Compromissos;
-using Atividade18.EAgenda.Módulo_Contatos;
-
-namespace Atividade18.EAgenda.Módulo_Tarefas
+﻿namespace Atividade18.EAgenda.Módulo_Tarefas
 {
      public class ControladorTarefa : ControladorBase
      {
@@ -60,9 +57,9 @@ namespace Atividade18.EAgenda.Módulo_Tarefas
           public override void Filtrar()
           {
                TelaFiltroTarefas telaFiltro = new TelaFiltroTarefas();
-                DialogResult opcaoEscolhida = telaFiltro.ShowDialog();
+               DialogResult opcaoEscolhida = telaFiltro.ShowDialog();
 
-               if(opcaoEscolhida == DialogResult.OK)
+               if (opcaoEscolhida == DialogResult.OK)
                {
                     StatusTarefasEnum filtroTarefas = telaFiltro.ObterFiltroTarefa();
                     List<Tarefa> tarefas = null;
@@ -143,10 +140,7 @@ namespace Atividade18.EAgenda.Módulo_Tarefas
 
           public override UserControl ObterListas()
           {
-               if (tabelaTarefa == null)
-               {
-                    tabelaTarefa = new TabelaTarefaControl();
-               }
+               tabelaTarefa = new TabelaTarefaControl();
 
                CarregarTarefas();
 
@@ -172,9 +166,10 @@ namespace Atividade18.EAgenda.Módulo_Tarefas
 
                if (opcaoEscolhida == DialogResult.OK)
                {
+
                     List<ItemTarefa> itemTarefa = telaItemTarefa.ObterItensTarefa();
 
-                    foreach(ItemTarefa item in itemTarefa)
+                    foreach (ItemTarefa item in itemTarefa)
                     {
                          tarefaSelecionada.AdicionarItens(item);
                     }
@@ -224,7 +219,7 @@ namespace Atividade18.EAgenda.Módulo_Tarefas
                     repositorioTarefas.Editar(tarefaSelecionada.id, tarefaSelecionada);
 
                     CarregarTarefas();
-                    
+
                     TelaPrincipalForm.Instancia.AtualizarRodape("Itens atualizados com sucesso!", TipoStatusEnum.Sucesso);
                }
           }

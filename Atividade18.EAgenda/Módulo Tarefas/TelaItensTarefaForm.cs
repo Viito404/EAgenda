@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using System.Data;
 namespace Atividade18.EAgenda.Módulo_Tarefas
 {
      public partial class TelaItensTarefaForm : Form
      {
           private Tarefa tarefa;
+          List<ItemTarefa> tarefaList = new List<ItemTarefa>();
           public TelaItensTarefaForm(Tarefa tarefa)
           {
                InitializeComponent();
@@ -32,12 +24,22 @@ namespace Atividade18.EAgenda.Módulo_Tarefas
           {
                return lbItensTarefa.Items.Cast<ItemTarefa>().ToList();
           }
-
           private void btnAdicionar_Click(object sender, EventArgs e)
           {
-               string titulo = tboxTitulo.Text;
-               ItemTarefa itemTarefa = new ItemTarefa(tboxDescricao.Text);
-               lbItensTarefa.Items.Add(itemTarefa);
+               string titulo = tboxDescricao.Text;
+
+               ItemTarefa itemTarefa = new ItemTarefa(titulo);
+               lbItensTarefa.Items.Add(itemTarefa); 
+               tarefaList.Add(new ItemTarefa(titulo));               
+          }
+
+          private void btnCadastrar_Click(object sender, EventArgs e)
+          {
+               lbItensTarefa.Items.Clear();
+               foreach (ItemTarefa item in tarefaList)
+               {
+                    lbItensTarefa.Items.Add(item);
+               }
           }
      }
 }

@@ -2,6 +2,7 @@ using Atividade18.EAgenda.Compartilhado;
 using Atividade18.EAgenda.Módulo_Contatos;
 using Atividade18.EAgenda.Módulo_Compromissos;
 using Atividade18.EAgenda.Módulo_Tarefas;
+using Atividade18.EAgenda.Módulo_Despesas;
 
 namespace Atividade18.EAgenda
 {
@@ -11,6 +12,7 @@ namespace Atividade18.EAgenda
           private RepositorioContatos repositorioContatos = new RepositorioContatos(new List<Contato>());
           private RepositorioCompromissos repositorioCompromissos = new RepositorioCompromissos(new List<Compromisso>());
           private RepositorioTarefas repositorioTarefas = new RepositorioTarefas(new List<Tarefa>());
+          private RepositorioCategorias repositorioCategorias = new RepositorioCategorias(new List<Categoria>());
           private int contador = 5;
 
           private static TelaPrincipalForm telaPrincipal;
@@ -50,7 +52,7 @@ namespace Atividade18.EAgenda
                repositorioCompromissos.Inserir(compromisso4);
                repositorioCompromissos.Inserir(compromisso5);
 
-               Tarefa tarefa1 = new Tarefa(1, "Limpar casa", PrioridadesTarefasEnum.Normal, new DateTime(2023,5,29));
+               Tarefa tarefa1 = new Tarefa(1, "Limpar casa", PrioridadesTarefasEnum.Normal, new DateTime(2023, 5, 29));
                Tarefa tarefa2 = new Tarefa(2, "Dar Banho PET", PrioridadesTarefasEnum.Alta, new DateTime(2023, 5, 30));
                Tarefa tarefa3 = new Tarefa(3, "Trabalho Escolar", PrioridadesTarefasEnum.Normal, new DateTime(2023, 5, 31));
                Tarefa tarefa4 = new Tarefa(4, "Levar juninho no parquinho", PrioridadesTarefasEnum.Baixa, new DateTime(2023, 5, 25));
@@ -80,7 +82,7 @@ namespace Atividade18.EAgenda
                repositorioTarefas.Inserir(tarefa2);
                repositorioTarefas.Inserir(tarefa3);
                repositorioTarefas.Inserir(tarefa4);
-               repositorioTarefas.Inserir(tarefa5);   
+               repositorioTarefas.Inserir(tarefa5);
           }
           public void AtualizarRodape(string mensagem, TipoStatusEnum tipoStatus)
           {
@@ -213,6 +215,16 @@ namespace Atividade18.EAgenda
                btnFiltrar.Enabled = controlador.FiltrarHabilitado;
                btnAddItens.Enabled = controlador.AdicionarItensHabilitado;
                btnChecar.Enabled = controlador.ConcluirItensHabilitado;
+          }
+          private void categoriasMenuItem_Click(object sender, EventArgs e)
+          {
+               controlador = new ControladorCategoria(repositorioCategorias);
+               ConfigurarTelaPrincipal(controlador);
+          }
+
+          private void despesasMenuItem_Click(object sender, EventArgs e)
+          {
+
           }
      }
 }

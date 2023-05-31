@@ -156,10 +156,7 @@ namespace Atividade18.EAgenda.Módulo_Compromissos
 
           public override UserControl ObterListas()
           {
-               if (tabelaCompromisso == null)
-               {
-                    tabelaCompromisso = new TabelaCompromissoControl();
-               }
+               tabelaCompromisso = new TabelaCompromissoControl();
 
                CarregarCompromissos();
 

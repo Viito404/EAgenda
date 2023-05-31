@@ -1,11 +1,4 @@
-﻿using Atividade18.EAgenda.Módulo_Contatos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Atividade18.EAgenda.Compartilhado
+﻿namespace Atividade18.EAgenda.Compartilhado
 {
      public abstract class RepositorioBase<TEntidade> where TEntidade : EntidadeBase<TEntidade>
      {
@@ -27,6 +20,17 @@ namespace Atividade18.EAgenda.Compartilhado
                dados.Add(registro);
           }
 
+          public virtual void Editar(int id, TEntidade registroAtualizado)
+          {
+               TEntidade registroSelecionado = SelecionarPorId(id);
+
+               registroSelecionado.AtualizarRegistros(registroAtualizado);
+          }
+          public virtual void Editar(TEntidade registroSelecionado, TEntidade registroAtualizado)
+          {
+               registroSelecionado.AtualizarRegistros(registroAtualizado);
+          }
+
           public virtual void Remover(TEntidade registroSelecionado)
           {
                dados.Remove(registroSelecionado);
@@ -39,17 +43,6 @@ namespace Atividade18.EAgenda.Compartilhado
                     dados.Remove(registroSelecionado);
           }
 
-          public virtual void Editar(int id, TEntidade registroAtualizado)
-          {
-               TEntidade registroSelecionado = SelecionarPorId(id);
-
-               registroSelecionado.AtualizarRegistros(registroAtualizado);
-          }
-          public virtual void Editar(TEntidade registroSelecionado, TEntidade registroAtualizado)
-          {
-               registroSelecionado.AtualizarRegistros(registroAtualizado);
-          }
-
           public virtual List<TEntidade> SelecionarRegistros()
           {
                return dados.OrderByDescending(x => x.id).ToList();
@@ -60,5 +53,4 @@ namespace Atividade18.EAgenda.Compartilhado
                return contadorId;
           }
      }
- 
 }

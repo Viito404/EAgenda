@@ -98,8 +98,7 @@
           }
           public override UserControl ObterListas()
           {
-               if (tabelaContato == null)
-                    tabelaContato = new TabelaContatoControl();
+               tabelaContato = new TabelaContatoControl();
 
                CarregarContatos();
 

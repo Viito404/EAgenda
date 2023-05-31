@@ -16,7 +16,6 @@
                this.cargo = cargo;
                this.empresa = empresa;
           }
-
           public override void AtualizarRegistros(Contato contatoAtualizado)
           {
                this.nome = contatoAtualizado.nome;
