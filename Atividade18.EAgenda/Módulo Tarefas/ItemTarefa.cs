@@ -19,7 +19,6 @@
           {
                concluido = true;
           }
-
           public override bool Equals(object? obj)
           {
                return obj is ItemTarefa tarefa &&
