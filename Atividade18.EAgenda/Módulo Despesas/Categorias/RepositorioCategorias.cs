@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atividade18.EAgenda.Módulo_Despesas
 {
-     public class RepositorioCategorias: RepositorioBase<Categoria>
+     public class RepositorioCategorias: RepositorioEmMemoriaBase<Categoria>
      {
         public RepositorioCategorias(List<Categoria> listaCategorias)
         {

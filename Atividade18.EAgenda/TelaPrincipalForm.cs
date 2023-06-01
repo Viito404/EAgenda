@@ -11,7 +11,7 @@ namespace Atividade18.EAgenda
           private ControladorBase controlador;
           private RepositorioContatos repositorioContatos = new RepositorioContatos(new List<Contato>());
           private RepositorioCompromissos repositorioCompromissos = new RepositorioCompromissos(new List<Compromisso>());
-          private RepositorioTarefas repositorioTarefas = new RepositorioTarefas(new List<Tarefa>());
+          private IRepositorioTarefa repositorioTarefas = new RepositorioTarefasEmArquivo();
           private RepositorioCategorias repositorioCategorias = new RepositorioCategorias(new List<Categoria>());
           private int contador = 5;
 

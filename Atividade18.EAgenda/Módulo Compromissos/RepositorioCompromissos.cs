@@ -1,6 +1,6 @@
 ﻿namespace Atividade18.EAgenda.Módulo_Compromissos
 {
-     public class RepositorioCompromissos : RepositorioBase<Compromisso>
+     public class RepositorioCompromissos : RepositorioEmMemoriaBase<Compromisso>
      {
         public RepositorioCompromissos(List<Compromisso> listaCompromissos)
         {

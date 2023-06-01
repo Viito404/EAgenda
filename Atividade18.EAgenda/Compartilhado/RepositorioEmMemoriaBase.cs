@@ -1,6 +1,6 @@
 ﻿namespace Atividade18.EAgenda.Compartilhado
 {
-     public abstract class RepositorioBase<TEntidade> where TEntidade : EntidadeBase<TEntidade>
+     public abstract class RepositorioEmMemoriaBase<TEntidade> where TEntidade : EntidadeBase<TEntidade>
      {
           protected List<TEntidade> dados;
           protected int contadorId = 0;

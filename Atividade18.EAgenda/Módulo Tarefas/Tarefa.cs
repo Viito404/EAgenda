@@ -1,5 +1,6 @@
 ﻿namespace Atividade18.EAgenda.Módulo_Tarefas
 {
+     [Serializable]
      public class Tarefa : EntidadeBase<Tarefa>
      {
           public string titulo;

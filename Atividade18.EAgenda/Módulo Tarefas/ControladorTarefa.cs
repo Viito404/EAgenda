@@ -2,9 +2,9 @@
 {
      public class ControladorTarefa : ControladorBase
      {
-          private RepositorioTarefas repositorioTarefas;
+          private IRepositorioTarefa repositorioTarefas;
           private TabelaTarefaControl tabelaTarefa;
-          public ControladorTarefa(RepositorioTarefas repositorioTarefas)
+          public ControladorTarefa(IRepositorioTarefa repositorioTarefas)
           {
                this.repositorioTarefas = repositorioTarefas;
           }

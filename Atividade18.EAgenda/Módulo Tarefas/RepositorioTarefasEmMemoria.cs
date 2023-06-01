@@ -1,8 +1,8 @@
 ﻿namespace Atividade18.EAgenda.Módulo_Tarefas
 {
-    public class RepositorioTarefas : RepositorioBase<Tarefa>
+    public class RepositorioTarefasEmMemoria : RepositorioEmMemoriaBase<Tarefa>
      {
-        public RepositorioTarefas(List<Tarefa> listaTarefas)
+        public RepositorioTarefasEmMemoria(List<Tarefa> listaTarefas)
         {
                this.dados = listaTarefas;
         }

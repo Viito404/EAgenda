@@ -1,6 +1,6 @@
 ﻿namespace Atividade18.EAgenda.Módulo_Contatos
 {
-     public class RepositorioContatos : RepositorioBase<Contato>
+     public class RepositorioContatos : RepositorioEmMemoriaBase<Contato>
      {
           public RepositorioContatos(List<Contato> listaContatos)
           {
