@@ -8,7 +8,11 @@
           public string cargo;
           public string empresa;
 
-          public Contato(string nome, string telefone, string email, string cargo, string empresa)
+        public Contato()
+        {
+            
+        }
+        public Contato(string nome, string telefone, string email, string cargo, string empresa)
           {
                this.nome = nome;
                this.telefone = telefone;

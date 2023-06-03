@@ -13,7 +13,11 @@ namespace Atividade18.EAgenda.Módulo_Compromissos
           public string localOnline;
           public LocalCompromissoEnum localCompromisso;
 
-          public Compromisso(string assunto,
+        public Compromisso()
+        {
+            
+        }
+        public Compromisso(string assunto,
                DateTime data,
                TimeSpan horarioInicio,
                TimeSpan horarioFinal,

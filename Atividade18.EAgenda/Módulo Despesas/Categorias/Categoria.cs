@@ -11,7 +11,12 @@ namespace Atividade18.EAgenda.Módulo_Despesas
      {
           public string titulo;
           public List<Despesa> despesas;
-          public Categoria(string titulo)
+
+        public Categoria()
+        {
+            
+        }
+        public Categoria(string titulo)
           {
                this.titulo = titulo;
                despesas = new List<Despesa>();

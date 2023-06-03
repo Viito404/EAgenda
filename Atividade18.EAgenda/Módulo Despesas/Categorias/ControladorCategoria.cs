@@ -1,4 +1,5 @@
 ﻿using Atividade18.EAgenda.Módulo_Contatos;
+using Atividade18.EAgenda.Módulo_Despesas.Categorias;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace Atividade18.EAgenda.Módulo_Despesas
 {
      public class ControladorCategoria : ControladorBase
      {
-          private RepositorioCategorias repositorioCategorias;
+          private IRepositorioCategoria repositorioCategorias;
           private TabelaCategoriaControl tabelaCategorias;
-          public ControladorCategoria(RepositorioCategorias repositorioCategorias)
+          public ControladorCategoria(IRepositorioCategoria repositorioCategorias)
           {
                this.repositorioCategorias = repositorioCategorias;
           }

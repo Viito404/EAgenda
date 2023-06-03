@@ -15,7 +15,11 @@ namespace Atividade18.EAgenda.Módulo_Despesas
 
           public List<Categoria> categorias;
 
-          public Despesa(string descricao, decimal valor, DateTime data, FormaPagamentoEnum pagamento)
+        public Despesa()
+        {
+            
+        }
+        public Despesa(string descricao, decimal valor, DateTime data, FormaPagamentoEnum pagamento)
           {
                this.descricao = descricao;
                this.valor = valor;

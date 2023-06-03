@@ -2,10 +2,10 @@
 {
     public class ControladorContato : ControladorBase
      {
-          RepositorioContatos repositorioContatos;
+          IRepositorioContato repositorioContatos;
           private TabelaContatoControl tabelaContato;
 
-          public ControladorContato(RepositorioContatos repositorioContatos)
+          public ControladorContato(IRepositorioContato repositorioContatos)
           {
                this.repositorioContatos = repositorioContatos;
           }

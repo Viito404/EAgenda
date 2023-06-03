@@ -1,8 +1,8 @@
 ﻿namespace Atividade18.EAgenda.Módulo_Compromissos
 {
-     public class RepositorioCompromissos : RepositorioEmMemoriaBase<Compromisso>
+     public class RepositorioCompromissosEmMemoria : RepositorioEmMemoriaBase<Compromisso>
      {
-        public RepositorioCompromissos(List<Compromisso> listaCompromissos)
+        public RepositorioCompromissosEmMemoria(List<Compromisso> listaCompromissos)
         {
             this.dados = listaCompromissos;
         }

@@ -4,11 +4,11 @@ namespace Atividade18.EAgenda.Módulo_Compromissos
 {
      public class ControladorCompromisso : ControladorBase
      {
-          private RepositorioContatos repositorioContato;
-          private RepositorioCompromissos repositorioCompromisso;
+          private IRepositorioContato repositorioContato;
+          private IRepositorioCompromisso repositorioCompromisso;
          TabelaCompromissoControl tabelaCompromisso;
 
-          public ControladorCompromisso(RepositorioContatos repositorioContato, RepositorioCompromissos repositorioCompromisso)
+          public ControladorCompromisso(IRepositorioContato repositorioContato, IRepositorioCompromisso repositorioCompromisso)
           {
                this.repositorioContato = repositorioContato;
                this.repositorioCompromisso = repositorioCompromisso;

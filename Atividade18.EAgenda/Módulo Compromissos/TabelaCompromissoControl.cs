@@ -15,7 +15,7 @@
                tabelaCompromisso.Rows.Clear();
                foreach (Compromisso compromisso in compromissos)
                {
-                    tabelaCompromisso.Rows.Add(compromisso.id, compromisso.assunto, compromisso.data);
+                    tabelaCompromisso.Rows.Add(compromisso.id, compromisso.assunto, compromisso.data, compromisso.contato?.nome);
                }
           }
 
@@ -52,7 +52,12 @@
                     {
                          Name = "data",
                          HeaderText = "Data"
-                    }   
+                    },
+                    new DataGridViewTextBoxColumn()
+                    {
+                         Name = "contato.nome",
+                         HeaderText = "Contato"
+                    }
                };
 
                tabelaCompromisso.Columns.AddRange(colunas);
