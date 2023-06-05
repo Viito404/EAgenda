@@ -10,6 +10,7 @@
             form.ShowIcon = false;
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowInTaskbar = false;
+            form.Size = new Size(725, 500);
         }
     }
 }

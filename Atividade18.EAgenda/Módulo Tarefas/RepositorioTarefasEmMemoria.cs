@@ -2,10 +2,9 @@
 {
     public class RepositorioTarefasEmMemoria : RepositorioEmMemoriaBase<Tarefa>
      {
-        public RepositorioTarefasEmMemoria(List<Tarefa> listaTarefas)
-        {
-               this.dados = listaTarefas;
-        }
+          public RepositorioTarefasEmMemoria(List<Tarefa> dados) : base(dados)
+          {
+          }
 
           public override List<Tarefa> SelecionarRegistros()
           {

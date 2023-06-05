@@ -4,6 +4,7 @@ using Atividade18.EAgenda.Módulo_Compromissos;
 using Atividade18.EAgenda.Módulo_Tarefas;
 using Atividade18.EAgenda.Módulo_Despesas;
 using Atividade18.EAgenda.Módulo_Despesas.Categorias;
+using Atividade18.EAgenda.Módulo_Despesas.Despesas;
 
 namespace Atividade18.EAgenda
 {
@@ -15,6 +16,7 @@ namespace Atividade18.EAgenda
           private IRepositorioCompromisso repositorioCompromissos = new RepositorioCompromissosEmArquivo(contexto);
           private IRepositorioTarefa repositorioTarefas = new RepositorioTarefasEmArquivo(contexto);
           private IRepositorioCategoria repositorioCategorias = new RepositorioCategoriasEmArquivo(contexto);
+          private IRepositorioDespesa repositorioDespesas = new RepositorioDespesasEmArquivo(contexto);
           private int contador = 5;
 
           private static TelaPrincipalForm telaPrincipal;
@@ -166,7 +168,8 @@ namespace Atividade18.EAgenda
 
           private void despesasMenuItem_Click(object sender, EventArgs e)
           {
-
+               controlador = new ControladorDespesa(repositorioDespesas);
+               ConfigurarTelaPrincipal(controlador);
           }
      }
 }

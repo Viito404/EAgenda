@@ -5,6 +5,11 @@
           protected List<TEntidade> dados;
           protected int contadorId = 0;
 
+          protected RepositorioEmMemoriaBase(List<TEntidade> dados)
+          {
+               this.dados = dados;
+          }
+
           public virtual TEntidade SelecionarPorId(int id)
           {
                if (dados.Exists(registro => registro.id == id))

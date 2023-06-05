@@ -1,11 +1,11 @@
 ﻿namespace Atividade18.EAgenda.Módulo_Compromissos
 {
-     public class RepositorioCompromissosEmMemoria : RepositorioEmMemoriaBase<Compromisso>
+     public class RepositorioCompromissosEmMemoria : RepositorioEmMemoriaBase<Compromisso>, IRepositorioCompromisso
      {
-        public RepositorioCompromissosEmMemoria(List<Compromisso> listaCompromissos)
-        {
-            this.dados = listaCompromissos;
-        }
+          public RepositorioCompromissosEmMemoria(List<Compromisso> dados) : base(dados)
+          {
+          }
+
           public List<Compromisso> SelecionarCompromissosPassados(DateTime hoje)
           {
                return dados.Where(x => x.data.Date < hoje.Date).ToList();

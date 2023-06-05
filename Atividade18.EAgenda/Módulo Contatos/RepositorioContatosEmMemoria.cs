@@ -2,9 +2,8 @@
 {
      public class RepositorioContatosEmMemoria : RepositorioEmMemoriaBase<Contato>
      {
-          public RepositorioContatosEmMemoria(List<Contato> listaContatos)
+          public RepositorioContatosEmMemoria(List<Contato> dados) : base(dados)
           {
-               this.dados = listaContatos;
           }
      }
 }

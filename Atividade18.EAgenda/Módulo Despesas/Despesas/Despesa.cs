@@ -19,8 +19,9 @@ namespace Atividade18.EAgenda.Módulo_Despesas
         {
             
         }
-        public Despesa(string descricao, decimal valor, DateTime data, FormaPagamentoEnum pagamento)
+        public Despesa(int id, string descricao, decimal valor, DateTime data, FormaPagamentoEnum pagamento)
           {
+               this.id = id;
                this.descricao = descricao;
                this.valor = valor;
                this.data = data;
